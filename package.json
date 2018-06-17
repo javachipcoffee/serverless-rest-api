@@ -1,0 +1,19 @@
+{
+  "name": "serverless-rest-api",
+  "version": "1.0.0",
+  "description": "RESTAPI Using NodeJs and Serverless",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javachipcoffee/serverless-rest-api.git"
+  },
+  "author": "Justine Fernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javachipcoffee/serverless-rest-api/issues"
+  },
+  "homepage": "https://github.com/javachipcoffee/serverless-rest-api#readme"
+}
