@@ -9,6 +9,14 @@ provider:
 
 functions:
   createuser:
+    handler: api/login.login
+    events:
+      - http:
+          path: /login
+          method: post
+          cors: true
+
+  createuser:
     handler: api/create.createUser
     events:
       - http:

@@ -27,6 +27,7 @@
     "serverless-plugin-optimize": "^3.1.1-rc.1"
   },
   "dependencies": {
+    "jsonwebtoken": "^8.3.0",
     "mysql2": "^1.5.3",
     "sequelize": "^4.37.10",
     "serverless": "^1.27.3"
