@@ -8,14 +8,87 @@ provider:
   environment: ${file(./env.yml):${self:provider.stage}}
 
 functions:
-  create:
-    handler: api/create.create
+  createUsers:
+    handler: api/create.createUser
     events:
       - http:
-          path: /create
+          path: /create/user
           method: post
           cors: true
-
+  createPosts:
+    handler: api/create.createPost
+    event:
+      - http:
+          path: /create/posts
+          method: post
+          cors: true
+  createTags:
+    handler: api/create.createPost
+    event:
+      - http:
+          path: /create/tag
+          method: post
+          cors: true
+  deleteUsers:
+    handler: api/delete.deleteUser
+    events: 
+      - http:
+          path: /delete/user/{id}
+  deletePost:
+    handler: api/delete.deletePost
+    events: 
+      - http:
+          path: /delete/post/{id}
+  deleteTags:
+    handler: api/delete.deleteTag
+    events: 
+      - http:
+          path: /delete/tag/{id}
+  updateUser:
+    handler: api/update.updateUser
+    events: 
+      - http:
+          path: /update/user/{id}
+  updatePost:
+    handler: api/update.updatePost
+    events: 
+      - http:
+          path: /update/post/{id}
+  updateTag:
+    handler: api/update.updatePost
+    events: 
+      - http:
+          path: /update/tag/{id}
+  getUser:
+    handler: api/get.getUser
+    events: 
+      - http:
+          path: /get/user/{id}
+  getPost:
+    handler: api/get.getPost
+    events: 
+      - http:
+          path: /get/post/{id}
+  getTag:
+    handler: api/get.getPost
+    events: 
+      - http:
+          path: /get/tag/{id}
+  listUser:
+    handler: api/list.listUser
+    events: 
+      - http:
+          path: /list/user/{id}
+  listPost:
+    handler: api/list.listPost
+    events: 
+      - http:
+          path: /list/post/{id}
+  listTag:
+    handler: api/list.listPost
+    events: 
+      - http:
+          path: /list/tag/{id}
 custom:
   optimize:
     minify: true
