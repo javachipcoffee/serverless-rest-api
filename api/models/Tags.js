@@ -10,7 +10,6 @@ module.exports = db.define('tags', {
         unique: true
     },
     text: Sequelize.TEXT,
-    checked: Sequelize.BOOLEAN,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
   });

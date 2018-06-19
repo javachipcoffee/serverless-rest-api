@@ -4,10 +4,23 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   environment: ${file(./env.yml):${self:provider.stage}}
 
 functions:
-  hello:
-    handler: handler.hello
+  create:
+    handler: api/create.create
+    events:
+      - http:
+          path: /create
+          method: post
+          cors: true
 
+custom:
+  optimize:
+    minify: true
+    presets: ['env']
+
+plugins:
+  - serverless-plugin-optimize
+  - serverless-offline
