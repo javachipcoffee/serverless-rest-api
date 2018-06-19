@@ -63,33 +63,46 @@ functions:
           path: /update/user/{id}
           method: put
           cors: true
-  # updatePost:
-  #   handler: api/update.updatePost
-  #   events: 
-  #     - http:
-  #         path: /update/post/{id}
-            # method: put
-            # cors: true
-  # updateTag:
-  #   handler: api/update.updatePost
-  #   events: 
-  #     - http:
-  #         path: /update/tag/{id}
-  # getUser:
-  #   handler: api/get.getUser
-  #   events: 
-  #     - http:
-  #         path: /get/user/{id}
-  # getPost:
-  #   handler: api/get.getPost
-  #   events: 
-  #     - http:
-  #         path: /get/post/{id}
-  # getTag:
-  #   handler: api/get.getPost
-  #   events: 
-  #     - http:
-  #         path: /get/tag/{id}
+  updatePost:
+    handler: api/update.updatePost
+    events: 
+      - http:
+          path: /update/post/{id}
+          method: put
+          cors: true
+
+  updateTag:
+    handler: api/update.updatePost
+    events: 
+      - http:
+          path: /update/tag/{id}
+          method: put
+          cors: true
+
+  getUser:
+    handler: api/get.getUser
+    events: 
+      - http:
+          path: /get/user/{id}
+          method: get
+          cors: true
+
+  getPost:
+    handler: api/get.getPost
+    events: 
+      - http:
+          path: /get/post/{id}
+          method: get
+          cors: true
+
+  getTag:
+    handler: api/get.getPost
+    events: 
+      - http:
+          path: /get/tag/{id}
+          method: get
+          cors: true
+
   listUser:
     handler: api/list.listUser
     events: 
