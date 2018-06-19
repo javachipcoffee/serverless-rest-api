@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "mysql2": "^1.5.3",
-    "sequelize": "^4.37.10"
+    "sequelize": "^4.37.10",
+    "serverless": "^1.27.3"
   },
   "optionalDependencies": {}
 }

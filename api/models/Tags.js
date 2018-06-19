@@ -1,6 +1,6 @@
 'use strict';
 
-const Sequelize = require('sequelize');
+var Sequelize = require('sequelize');
 const db = require('../lib/db.js').connect();
 
 module.exports = db.define('tag', {
@@ -9,7 +9,7 @@ module.exports = db.define('tag', {
         primaryKey: true,
         unique: true
     },
-    text: Sequelize.TEXT,
+    tag: Sequelize.TEXT,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
-  });
+});

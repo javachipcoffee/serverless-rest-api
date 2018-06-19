@@ -8,87 +8,112 @@ provider:
   environment: ${file(./env.yml):${self:provider.stage}}
 
 functions:
-  createUsers:
+  createuser:
     handler: api/create.createUser
     events:
       - http:
           path: /create/user
           method: post
           cors: true
-  createPosts:
+
+  createpost:
     handler: api/create.createPost
-    event:
+    events:
       - http:
-          path: /create/posts
+          path: /create/post
           method: post
           cors: true
-  createTags:
-    handler: api/create.createPost
-    event:
+
+  createtag:
+    handler: api/create.createTag
+    events:
       - http:
           path: /create/tag
           method: post
           cors: true
-  deleteUsers:
+
+  deleteUser:
     handler: api/delete.deleteUser
     events: 
       - http:
           path: /delete/user/{id}
+          method: delete
+          cors: true
+
   deletePost:
     handler: api/delete.deletePost
     events: 
       - http:
           path: /delete/post/{id}
-  deleteTags:
+          method: delete
+          cors: true
+
+  deleteTag:
     handler: api/delete.deleteTag
     events: 
       - http:
           path: /delete/tag/{id}
+          method: delete
+          cors: true
+
   updateUser:
     handler: api/update.updateUser
     events: 
       - http:
           path: /update/user/{id}
-  updatePost:
-    handler: api/update.updatePost
-    events: 
-      - http:
-          path: /update/post/{id}
-  updateTag:
-    handler: api/update.updatePost
-    events: 
-      - http:
-          path: /update/tag/{id}
-  getUser:
-    handler: api/get.getUser
-    events: 
-      - http:
-          path: /get/user/{id}
-  getPost:
-    handler: api/get.getPost
-    events: 
-      - http:
-          path: /get/post/{id}
-  getTag:
-    handler: api/get.getPost
-    events: 
-      - http:
-          path: /get/tag/{id}
+          method: put
+          cors: true
+  # updatePost:
+  #   handler: api/update.updatePost
+  #   events: 
+  #     - http:
+  #         path: /update/post/{id}
+            # method: put
+            # cors: true
+  # updateTag:
+  #   handler: api/update.updatePost
+  #   events: 
+  #     - http:
+  #         path: /update/tag/{id}
+  # getUser:
+  #   handler: api/get.getUser
+  #   events: 
+  #     - http:
+  #         path: /get/user/{id}
+  # getPost:
+  #   handler: api/get.getPost
+  #   events: 
+  #     - http:
+  #         path: /get/post/{id}
+  # getTag:
+  #   handler: api/get.getPost
+  #   events: 
+  #     - http:
+  #         path: /get/tag/{id}
   listUser:
     handler: api/list.listUser
     events: 
       - http:
-          path: /list/user/{id}
+          path: /list/user
+          method: get
+          cors: true
+          
   listPost:
     handler: api/list.listPost
     events: 
       - http:
-          path: /list/post/{id}
+          path: /list/post
+          method: get
+          cors: true
+
   listTag:
     handler: api/list.listPost
     events: 
       - http:
-          path: /list/tag/{id}
+          path: /list/tag
+          method: get
+          cors: true
+
 custom:
   optimize:
     minify: true

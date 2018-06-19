@@ -33,7 +33,8 @@ module.exports.createPost = (event, context, callback) => {
 
     const params = {
         username: data.username,
-        password: data.password,
+        post: data.post,
+        tag: data.tag,
         createdAt: timestamp,
         updatedAt: timestamp,
     };
@@ -54,8 +55,7 @@ module.exports.createTag = (event, context, callback) => {
     var data = JSON.parse(event.body);
 
     const params = {
-        username: data.username,
-        password: data.password,
+        tag: data.tag,
         createdAt: timestamp,
         updatedAt: timestamp,
     };

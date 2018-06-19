@@ -9,7 +9,9 @@ module.exports = db.define('post', {
         primaryKey: true,
         unique: true
     },
-    text: Sequelize.TEXT,
+    username: Sequelize.TEXT,
+    post: Sequelize.TEXT,
+    tag: Sequelize.TEXT,
     createdAt: Sequelize.DATE,
-    updateAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
 });

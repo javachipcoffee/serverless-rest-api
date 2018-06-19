@@ -1,1 +1,13 @@
-curl -X POST http://localhost:3000/create --data '{ "username": "user", "password": "123"}'
+curl -X POST http://localhost:3000/create/user --data '{ "username": "Justine1", "password": "Justine1234"}'
+curl -X POST http://localhost:3000/create/post --data '{ "username": "Justine1", "post": "Lorem ipsum dolor sit amet.", "tag": "General"}'
+curl -X POST http://localhost:3000/create/tag --data '{ "tag": "General2"}'
+curl -X "DELETE" http://localhost:3000/delete/user/1
+curl -X "DELETE" http://localhost:3000/delete/post/1
+curl -X "DELETE" http://localhost:3000/delete/tag/1
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/list/user
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/list/post
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/list/tag
+
+curl --data '{ "username": "Justine23", "password": "Justine1234"}' -X PUT http://localhost:3000/update/user/1
+curl --data '{ "username": "Justine23", "post": "Lorem ipsum dolor sit amet.", "tag": "General23"}' -X PUT http://localhost:3000/update/post/1
+curl --data '{ "tag": "General10"}' -X PUT http://localhost:3000/update/tag/1
