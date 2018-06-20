@@ -16,15 +16,23 @@ module.exports.createUser = (event, context, callback) => {
         createdAt: timestamp,
         updatedAt: timestamp,
     };
-
-    user.create(params).then( 
-        user => {
+    user.findOrCreate({
+        'where' : {username:data.username}, defaults: params
+    }).spread((user, created) => {
+        if (user) {
             const response = {
                 statusCode: 200,
                 body: JSON.stringify(user),
             };
             callback(null, response);
-        });
+        } else {
+            const response = {
+                statusCode: 200,
+                body: JSON.stringify(created),
+            };
+            callback(null, response);
+        }
+    })
 };
 
 module.exports.createPost = (event, context, callback) => {
