@@ -8,7 +8,7 @@ provider:
   environment: ${file(./env.yml):${self:provider.stage}}
 
 functions:
-  createuser:
+  login:
     handler: api/login.login
     events:
       - http:
